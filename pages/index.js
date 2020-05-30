@@ -36,7 +36,7 @@ export default function Home({ allMovieData = [] }) {
         <h2 className={utilStyles.headingLg}>All Movies</h2>
         <ul className={utilStyles.list}>
           {visibleMovieList.map((movie) => (
-            <MovieItem movie={movie} />
+            <MovieItem movie={movie} key={movie.id} />
           ))}
         </ul>
       </section>

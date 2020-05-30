@@ -11,7 +11,7 @@ const Ratings = ({ ratings }) => {
   return (
     <div className="flex">
       {ratings.map((r) => (
-        <Rating rating={r} />
+        <Rating rating={r} key={`rating-${r.Source}`} />
       ))}
     </div>
   );

@@ -6,7 +6,7 @@ const MovieItem = ({
   movie: { id, Movie, Year, ImdbRating, RottenTomatoesRating },
 }) => {
   return (
-    <li className={`my-4`} key={id}>
+    <li className={`my-4`}>
       <Link href="/movies/[id]" as={`/movies/${id}`}>
         <a>
           {Movie} ({Year})
