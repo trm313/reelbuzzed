@@ -1,7 +1,8 @@
 import Head from "next/head";
 import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+
+import Footer from "./footer";
 
 const name = "Reel Buzzed";
 export const siteTitle = "Reel Buzzed | Movie Drinking Games";
@@ -35,6 +36,7 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
+      <Footer />
     </div>
   );
 }
