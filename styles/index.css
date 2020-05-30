@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+
+/* ----- BASE STYLES -----------*/
+
+h1 {
+  @apply text-2xl;
+}
+h2 {
+  @apply text-xl;
+}
+h3 {
+  @apply text-lg;
+}
+a {
+  @apply text-blue-600 underline;
+}
+
+img {
+  @apply block max-w-full;
+}
+
+a {
+  @apply text-blue-600;
+  text-decoration: none;
+}
+
+a:hover {
+  @apply text-blue-800;
+  text-decoration: none;
+}
+
+.form-input {
+  @apply flex-grow py-2 px-4 bg-gray-200 text-gray-800 rounded text-sm;
+}
+.form-group {
+  @apply flex w-full my-2;
+}
+.form-label {
+  @apply uppercase text-xs flex-shrink-0 mr-2;
+}
+.form-button {
+  @apply p-2 flex items-center justify-center rounded flex-shrink-0 bg-gray-800 text-white;
+}
+
+@import "./markdown.css";
+/* ----- CUSTOM STYLES --------------- */
+.btn-blue {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+}
+
+.hero {
+  @apply py-20;
+}
+
+.title {
+  @apply text-5xl text-center;
+  color: #333;
+  line-height: 1.15;
+}
+
+/* ------- END CUSTOM STYLES ---------- */
+@tailwind utilities;
