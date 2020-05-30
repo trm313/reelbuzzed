@@ -6,6 +6,7 @@ const Footer = () => {
         We do not accept any responsibility for over indulgence, irresponsible
         activity, or other such racousness. That's all on you.
       </p>
+      <p className="mt-4">Reel Buzzed © {new Date().getFullYear()}</p>
     </footer>
   );
 };
