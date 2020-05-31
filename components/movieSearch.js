@@ -6,17 +6,21 @@ import * as gtag from "../lib/gtag";
 const MovieSearch = ({ allMovies, setVisibleMovieList }) => {
   const [searchInput, setSearchInput] = useState("");
 
+  const logFailedSearch = (term) => {
+    gtag.event({
+      action: "search",
+      category: "No Search Results",
+      label: term,
+    });
+  };
+
   useEffect(() => {
     let filteredMovies = allMovies.filter((m) => {
       return m.Movie.toLowerCase().indexOf(searchInput.toLowerCase()) != -1;
     });
 
     if (filteredMovies.length == 0) {
-      gtag.event({
-        action: "search",
-        category: "No Search Results",
-        label: searchInput,
-      });
+      logFailedSearch(searchInput);
     }
 
     setVisibleMovieList(filteredMovies);
