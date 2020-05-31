@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./movieSearch.module.scss";
 
+import * as gtag from "../lib/gtag";
+
 const MovieSearch = ({ allMovies, setVisibleMovieList }) => {
   const [searchInput, setSearchInput] = useState("");
 
@@ -8,6 +10,14 @@ const MovieSearch = ({ allMovies, setVisibleMovieList }) => {
     let filteredMovies = allMovies.filter((m) => {
       return m.Movie.toLowerCase().indexOf(searchInput.toLowerCase()) != -1;
     });
+
+    if (filteredMovies.length == 0) {
+      gtag.event({
+        action: "search",
+        category: "No Search Results",
+        label: searchInput,
+      });
+    }
 
     setVisibleMovieList(filteredMovies);
   }, [searchInput]);
