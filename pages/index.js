@@ -38,6 +38,16 @@ export default function Home({ allMovieData = [] }) {
           {visibleMovieList.map((movie) => (
             <MovieItem movie={movie} key={movie.id} />
           ))}
+          {visibleMovieList.length === 0 && (
+            <div className="flex flex-col items-center text-center">
+              <i className="ri-ghost-line text-3xl text-gray-600" />
+              <p className="text-sm text-gray-600">
+                Sorry! Looks like we don't have a game for that movie yet..
+                <br />
+                We'll be adding a request form shortly!
+              </p>
+            </div>
+          )}
         </ul>
       </section>
     </Layout>
