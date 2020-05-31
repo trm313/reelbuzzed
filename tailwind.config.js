@@ -15,8 +15,14 @@ module.exports = {
         ],
         "display": ["Oswald", "Cambria", "serif"],
       },
+      fontSize: {
+        "3xs": "0.5rem",
+        "2xs": "0.6rem",
+      },
     },
   },
-  variants: {},
+  variants: {
+    border: ["focus"],
+  },
   plugins: [],
 };

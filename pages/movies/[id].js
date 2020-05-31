@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Layout from "../../components/layout";
 import MovieDetails from "../../components/movieDetails";
+import Ratings from "../../components/ratings";
 
 import { getAllMovieIds, getMovieRecord } from "../../lib/movies";
 
@@ -33,7 +34,7 @@ export default function Movie({ movieData }) {
       </Layout>
     );
   }
-  const { Movie, Year, RulesHtml } = movieData;
+  const { Movie, Year, RulesHtml, omdb } = movieData;
   return (
     <Layout>
       <Head>
@@ -43,6 +44,7 @@ export default function Movie({ movieData }) {
       </Head>
       <article>
         <MovieDetails movie={movieData} />
+
         <div className="">
           <h3 className="text-2xl my-3">Drink when...</h3>
           <div

@@ -1,0 +1,15 @@
+.searchIcon {
+  align-self: center;
+  transform: translateX(200%);
+}
+
+.clearIcon {
+  align-self: center;
+  transform: translateX(-200%);
+  cursor: pointer;
+  transition: all;
+  transition-duration: 200ms;
+  &:hover {
+    transform: translateX(-200%) rotate(90deg);
+  }
+}

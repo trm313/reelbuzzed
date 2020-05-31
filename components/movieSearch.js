@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styles from "./movieSearch.module.scss";
 
 const MovieSearch = ({ allMovies, setVisibleMovieList }) => {
   const [searchInput, setSearchInput] = useState("");
@@ -14,12 +15,18 @@ const MovieSearch = ({ allMovies, setVisibleMovieList }) => {
   return (
     <div className="">
       <div className="flex">
+        <i className={`ri-search-2-line text-gray-600 ${styles.searchIcon}`} />
+
         <input
-          className="form-input"
+          className="px-12 form-input leading-none"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
+          placeholder="Search movies"
         />
-        <button className="form-button">Search</button>
+        <i
+          className={`ri-close-fill text-gray-600 hover:text-gray-800 ${styles.clearIcon}`}
+          onClick={() => setSearchInput("")}
+        />
       </div>
     </div>
   );

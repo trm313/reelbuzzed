@@ -32,7 +32,9 @@ export default function Layout({ children, home }) {
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
-            <a>← Back to home</a>
+            <a className="shadow border border-gray-200 rounded-full py-2 px-4 hover:bg-gray-200">
+              ← Back to home
+            </a>
           </Link>
         </div>
       )}

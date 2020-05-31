@@ -10,6 +10,10 @@ class CustomDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"
             rel="stylesheet"
           />
+          <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+            rel="stylesheet"
+          ></link>
         </Head>
         <body>
           <Main />
