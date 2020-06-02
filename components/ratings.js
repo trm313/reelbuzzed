@@ -28,7 +28,7 @@ const ratingNames = {
 
 const RatingSm = ({ rating: { Source, Value } }) => (
   <div className="flex items-end text-gray-600 mr-4">
-    <p className="text-lg leading-none">
+    <p className="text-sm leading-none">
       {ratingNames[Source].shortVal(Value)}
     </p>
     <p className="ml-1 text-2xs leading-none">

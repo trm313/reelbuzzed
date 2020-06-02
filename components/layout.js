@@ -26,7 +26,11 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
-        <h1>{name}</h1>
+        <Link href="/">
+          <a className="text-gray-800">
+            <h1>{name}</h1>
+          </a>
+        </Link>
       </header>
       <main>{children}</main>
       {!home && (
