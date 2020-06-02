@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Layout from "../../components/layout";
 import MovieDetails from "../../components/movieDetails";
-import Ratings from "../../components/ratings";
 
 import { getAllMovieIds, getMovieRecord } from "../../lib/movies";
 
@@ -14,9 +13,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  // const movieData = await getMovieRecord(param.id.split("-")[0]);
-  const movieData = await getMovieRecord(params.id);
-  // console.log("[id].js", movieData);
+  const movieData = await getMovieRecord(params.id[2]);
+
   return {
     props: {
       movieData,
