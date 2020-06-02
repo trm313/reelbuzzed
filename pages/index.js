@@ -19,8 +19,21 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ allMovieData = [] }) {
+export default function Home({ allMovieData = [], testing }) {
   const [visibleMovieList, setVisibleMovieList] = useState(allMovieData);
+
+  if (allMovieData.length === 0) {
+    return (
+      <Layout home>
+        <Head>
+          <title>{siteTitle}</title>
+        </Head>
+        <div className="flex items-center justify-center my-12">
+          <p>Loading...</p>
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout home>

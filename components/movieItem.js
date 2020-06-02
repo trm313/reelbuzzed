@@ -2,9 +2,7 @@ import Link from "next/link";
 
 import Ratings from "../components/ratings";
 
-const MovieItem = ({
-  movie: { id, Movie, Year, ImdbRating, RottenTomatoesRating, slug },
-}) => {
+const MovieItem = ({ movie: { id, Movie, Year, omdb, slug } }) => {
   return (
     <li className={`my-4`}>
       <Link href="/movies/[...id]" as={`/movies/${slug.join("/")}`}>
@@ -13,18 +11,7 @@ const MovieItem = ({
         </a>
       </Link>
       <br />
-      <Ratings
-        ratings={[
-          {
-            Source: "Internet Movie Database",
-            Value: ImdbRating + "/10",
-          },
-          {
-            Source: "Rotten Tomatoes",
-            Value: Math.round(RottenTomatoesRating * 100) + "%",
-          },
-        ]}
-      />
+      <Ratings size="sm" ratings={omdb.Ratings} />
     </li>
   );
 };
