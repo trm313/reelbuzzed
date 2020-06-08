@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import { forceCheck } from "react-lazyload";
 
 import MovieItem from "../components/movieItem";
 import Layout, { siteTitle } from "../components/layout";
 import MovieSearch from "../components/movieSearch";
+import LandingContent from "../components/landingContent";
 
 import utilStyles from "../styles/utils.module.css";
 
@@ -21,6 +23,10 @@ export async function getStaticProps() {
 
 export default function Home({ allMovieData = [], testing }) {
   const [visibleMovieList, setVisibleMovieList] = useState(allMovieData);
+
+  useEffect(() => {
+    forceCheck();
+  }, [visibleMovieList]);
 
   if (allMovieData.length === 0) {
     return (
@@ -42,10 +48,15 @@ export default function Home({ allMovieData = [], testing }) {
       </Head>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <LandingContent />
+      </section>
+
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <MovieSearch
           allMovies={allMovieData}
           setVisibleMovieList={setVisibleMovieList}
         />
+
         <h2 className={utilStyles.headingLg}>All Movies</h2>
         <ul className={utilStyles.list}>
           {visibleMovieList.map((movie) => (
@@ -53,7 +64,7 @@ export default function Home({ allMovieData = [], testing }) {
           ))}
           {visibleMovieList.length === 0 && (
             <div className="flex flex-col items-center text-center">
-              <i className="ri-ghost-line text-3xl text-gray-600" />
+              <i className="ri-ghost-line text-5xl text-gray-400" />
               <p className="text-sm text-gray-600">
                 Sorry! Looks like we don't have a game for that movie yet..
                 <br />

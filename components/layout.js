@@ -25,12 +25,13 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header className="flex flex-col items-center justify-center border-b border-gray-200 py-2 mb-4">
         <Link href="/">
           <a className="text-gray-800">
             <h1>{name}</h1>
           </a>
         </Link>
+        <h2>Movie Drinking Games</h2>
       </header>
       <main>{children}</main>
       {!home && (
